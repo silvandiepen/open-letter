@@ -37,6 +37,7 @@ const log = __importStar(require("cli-block"));
 const markdown_1 = require("./libs/markdown");
 const helpers_1 = require("./libs/helpers");
 const files_1 = require("./libs/files");
+const partials_1 = require("./libs/partials");
 const svg_1 = require("./libs/svg");
 const page_1 = require("./libs/page");
 const tags_1 = require("./libs/tags");
@@ -164,6 +165,7 @@ helpers_1.hello()
     return s;
 })
     .then(exports.files)
+    .then(partials_1.processPartials)
     .then(exports.media)
     .then(tags_1.generateTags)
     .then(archives_1.generateArchives)
